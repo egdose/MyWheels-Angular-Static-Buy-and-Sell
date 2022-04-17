@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.vehicleContainer {
+  flex-basis: 70%;
+}
+
+.queryContainer {
+  flex-basis: 20%;
+  background-color: var(--white);
+  display: flex;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px;
+  max-width: 350px;
+  border-top: 10px solid var(--orange);
+}
+
+.queryContainer > * {
+  color: var(--dark);
+}

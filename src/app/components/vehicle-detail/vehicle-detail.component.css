@@ -1,0 +1,55 @@
+.vehicleDetails {
+  background-color: var(--white);
+  display: flex;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  flex-basis: 100%;
+  flex-grow: 1;
+  margin: 0px 10px;
+  border-top: 10px solid var(--orange);
+}
+
+.vehicleDetails > * {
+  color: var(--dark);
+}
+
+.detailsText > * {
+  color: var(--dark);
+  font-size: 1.2rem;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+.vehicleDetails > .image {
+  flex-basis: 60%;
+  align-self: center;
+}
+
+.vehicleDetails > .image > img {
+  width: 100%;
+}
+
+.vehicleDetails > .detailsText {
+  flex-basis: 40%;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsText > h3 {
+  font-size: 1.5rem;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+.detailsText > .button {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --dark: #0e1116ff;
+  --grey: rgb(224, 224, 224);
+  --green: #4e6e58ff;
+  --blue: #6b7fd7ff;
+  --orange: #fca311ff;
+  --white: #fefffeff;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--dark);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 10px;
+  font-family: "Roboto Slab", "Roboto Mono", sans-serif;
+  background-color: var(--dark);
+}

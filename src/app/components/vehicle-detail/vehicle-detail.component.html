@@ -1,0 +1,21 @@
+<div class="vehicleDetails">
+  <div class="image">
+    <img src='{{vehicle.image}}' alt="Image">
+  </div>
+  <div class="detailsText">
+    <h3>{{ vehicle.title }}</h3>
+    <div>Location: {{ vehicle.city }}</div>
+    <div>Price: PKR {{ vehicle.price }}</div>
+    <div>Rating: {{ vehicle.rating }}/5</div>
+    <div>Date Added: {{ getFormattedDate() }}</div>
+    <div>Make: {{ vehicle.make }}</div>
+    <div>Year: {{ vehicle.year }}</div>
+    <div>Mileage: {{ vehicle.mileage }}</div>
+    <div>Color: {{ vehicle.color }}</div>
+    <div>Engine Capacity: {{ vehicle.engine }}</div>
+    <div>Vehicle Type: {{ vehicle.type }}</div>
+
+    
+    <app-button class="button" color="var(--orange)" text="Hide Details" (btnClick)="(hideSelf())"></app-button>
+  </div>
+</div>

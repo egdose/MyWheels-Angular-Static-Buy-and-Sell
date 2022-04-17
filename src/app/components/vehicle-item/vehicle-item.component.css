@@ -1,0 +1,62 @@
+.vehicle {
+  background-color: var(--white);
+  display: flex;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px;
+  max-width: 350px;
+  border-top: 10px solid var(--orange);
+}
+
+.vehicle > * {
+  color: var(--dark);
+}
+
+.vehicle > .image {
+  width: 100%;
+}
+
+.vehicle > h3 {
+  font-size: 1.5rem;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  flex-basis: 70%;
+}
+
+.vehicle > .city {
+  font-size: 1.2rem;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  flex-basis: 20%;
+  align-self: center;
+  text-align: right;
+  justify-items: flex-end;
+}
+
+.vehicle > .price {
+  font-size: 1.2rem;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  flex-basis: 50%;
+}
+
+.vehicle > .rating {
+  font-size: 1.2rem;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  flex-basis: 50%;
+  align-self: center;
+  text-align: right;
+}
+
+.vehicle > .button {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,0 +1,9 @@
+<div class="vehicle">
+  <img src='{{vehicle.image}}' alt="Image" class="image">
+  <h3>{{ vehicle.title }}</h3>
+  <div class="city">{{ vehicle.city }}</div>
+  <div class="price">PKR {{ vehicle.price }}</div>
+  <div class="rating">Rating: {{ vehicle.rating }}/5</div>
+  <div class="date">{{ getFormattedDate() }}</div>
+  <app-button class="button" color="var(--orange)" text="View Details" (btnClick)="(emitTask())"></app-button>
+</div>
