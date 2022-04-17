@@ -8,22 +8,26 @@ import { Vehicle } from '../../Vehicle';
   styleUrls: ['./vehicle-item.component.css']
 })
 export class VehicleItemComponent implements OnInit {
-  @Input()
-  vehicle!: Vehicle;
-  @Output() viewDetail = new EventEmitter<Vehicle>();
+	@Input()
+	vehicle!: Vehicle;
+	@Output() viewDetail = new EventEmitter<Vehicle>();
 
-  constructor() {
-  }
+	constructor() {
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
-  getFormattedDate() {
-    return new DatePipe('en-US').transform(this.vehicle.dateAdded, 'MM dd, yyyy');
-  }
+	getFormattedDate() {
+		return new DatePipe('en-US').transform(this.vehicle.dateAdded, 'MM dd, yyyy');
+	}
 
-  emitTask() {
-    this.viewDetail.emit(this.vehicle);
-  }
+	showDetails() {
+		console.log(this.vehicle.type);
+		console.log("I was triggered");
+	}
+	emitTask() {
+		this.viewDetail.emit(this.vehicle);
+	}
 
 }

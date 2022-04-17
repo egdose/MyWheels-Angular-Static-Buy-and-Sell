@@ -3,7 +3,7 @@
   <div id="city">
     <div class="queryLabel">City</div>
     <!-- Select option for 5 cities -->
-    <select name="city" id="citySelect" class="querySelector">
+    <select name="city" id="citySelect" class="querySelector" [(ngModel)] ="citySelect" (change)="msgToVehicle()">
       <option value="All">All</option>
       <option value="Islamabad">Islamabad</option>
       <option value="Karachi">Karachi</option>
@@ -15,7 +15,7 @@
   <div class="make">
     <div class="queryLabel">Make</div>
     <!-- Select option for 5 makes -->
-    <select name="make" id="makeSelect" class="querySelector">
+    <select name="make" id="makeSelect" class="querySelector" [(ngModel)] ="makeSelect" (change)="msgToVehicle()">
       <option value="All">All</option>
       <option value="Mercedes-Benz">Mercedes-Benz</option>
       <option value="BMW">BMW</option>
@@ -30,13 +30,13 @@
   <div class="priceRange">
     <div class="queryLabel">Price Range</div>
     <!-- Two boxes with lower and upper limit of price -->
-    <input type="text" id="lowerPrice" class="queryInput" placeholder="Lower Limit">
-    <input type="text" id="upperPrice" class="queryInput" placeholder="Upper Limit">
+    <input type="text" id="lowerPrice" class="queryInput" placeholder="Lower Limit" [(ngModel)] = "lowerPrice" (input)="msgToVehicle()">
+    <input type="text" id="upperPrice" class="queryInput" placeholder="Upper Limit" [(ngModel)] = "upperPrice" (input)="msgToVehicle()">
   </div>
   <div class="year">
     <div class="queryLabel">Year</div>
     <!-- select option for years -->
-    <select name="year" id="yearSelect" class="querySelector">
+    <select name="year" id="yearSelect" class="querySelector" [(ngModel)] = "yearSelect" (change)="msgToVehicle()">
       <option value="All">All</option>
       <option value="2019">2019</option>
       <option value="2018">2018</option>
@@ -49,13 +49,13 @@
   <div class="mileageRange">
     <div class="queryLabel">Mileage Range</div>
     <!-- Two boxes with lower and upper limit of mileage -->
-    <input type="text" id="lowerMileage" class="queryInput" placeholder="Lower Limit">
-    <input type="text" id="upperMileage" class="queryInput" placeholder="Upper Limit">
+    <input type="text" id="lowerMileage" class="queryInput" placeholder="Lower Limit" [(ngModel)] = "lowerMileage" (input)="msgToVehicle()">
+    <input type="text" id="upperMileage" class="queryInput" placeholder="Upper Limit" [(ngModel)] = "upperMileage" (input)="msgToVehicle()">
   </div>
   <div class="color">
     <div class="queryLabel">Color</div>
     <!-- Select option for 5 colors -->
-    <select name="color" id="colorSelect" class="querySelector">
+    <select name="color" id="colorSelect" class="querySelector" [(ngModel)] = "colorSelect" (change)="msgToVehicle()">
       <option value="All">All</option>
       <option value="Black">Black</option>
       <option value="White">White</option>
@@ -68,7 +68,7 @@
   <div class="engine">
     <div class="queryLabel">Engine</div>
     <!-- Select option for 5 engines -->
-    <select name="engine" id="engineSelect" class="querySelector">
+    <select name="engine" id="engineSelect" class="querySelector" [(ngModel)] = "engineSelect" (change)="msgToVehicle()">
       <option value="All">All</option>
       <option value="V8">V8</option>
     </select>
@@ -76,7 +76,7 @@
   <div class="type">
     <div class="queryLabel">Type</div>
     <!-- Select option for 2 types -->
-    <select name="type" id="typeSelect" class="querySelector">
+    <select name="type" id="typeSelect" class="querySelector" [(ngModel)] = "typeSelect" (change)="msgToVehicle()">
       <option value="All">All</option>
       <option value="Car">Car</option>
       <option value="Bike">Bike</option>
@@ -85,7 +85,7 @@
   <div class="rating">
     <div class="queryLabel">Rating</div>
     <!-- Select option for 5 ratings -->
-    <select name="rating" id="ratingSelect" class="querySelector">
+    <select name="rating" id="ratingSelect" class="querySelector" [(ngModel)] = "ratingSelect" (change)="msgToVehicle()">
       <option value="All">All</option>
       <option value="5">5</option>
       <option value="4">4</option>

@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../Vehicle';
-import { VehicleDetailComponent } from '../vehicle-detail/vehicle-detail.component';
-
 
 @Component({
   selector: 'app-vehicle',
@@ -10,9 +8,11 @@ import { VehicleDetailComponent } from '../vehicle-detail/vehicle-detail.compone
   styleUrls: ['./vehicle.component.css']
 })
 export class VehicleComponent implements OnInit {
+
   vehicles: Vehicle[] = [];
   currentVehicle!: Vehicle;
   detailVisible: string = "none";
+  queryObject: any = [];
 
   constructor(private vehicleService: VehicleService) { }
 
@@ -21,11 +21,17 @@ export class VehicleComponent implements OnInit {
   }
 
   displayDetail(vehicle: Vehicle) {
-    this.currentVehicle = vehicle;
-    this.detailVisible = "block";
+	console.log("Event Triggered");
+	this.currentVehicle = vehicle;
+	this.detailVisible = "block";
   }
 
   hideDetail() {
     this.detailVisible = "none";
+  }
+
+  queryData($event: any[]) {
+	this.queryObject = $event;
+	console.log(this.queryObject);
   }
 }
