@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Vehicle } from '../Vehicle';
 import { VEHICLES } from '../Fake-Backend';
-import { Check } from '../check';
+import { Check } from '../Check';
 //import { Check } from '../Check';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehicleService {
+  public readonly allVehicles$: Observable<Vehicle[]>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.allVehicles$ = this.getAllVehicles();
+  }
 
 
   getVehicles(): Observable<Vehicle[]> {

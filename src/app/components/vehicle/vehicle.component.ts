@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../Vehicle';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vehicle',
@@ -10,12 +11,14 @@ import { Vehicle } from '../../Vehicle';
 })
 export class VehicleComponent implements OnInit {
 
-  vehicles: Vehicle[] = [];
+  public readonly vehicles$: Observable<Vehicle[]>;
   currentVehicle!: Vehicle;
   detailVisible: string = "none";
   queryObject: any = [];
 
-  constructor(private vehicleService: VehicleService) { }
+  constructor(private vehicleService: VehicleService) {
+    this.vehicles$ = this.vehicleService.allVehicles$;
+  }
 
   ngOnInit(): void {
     // this.vehicleService.getVehicles().subscribe(vehicles => {
@@ -23,21 +26,8 @@ export class VehicleComponent implements OnInit {
     //   console.log("HERE");
     //   console.log(this.vehicles);
     // });
-    this.vehicleService.getAllVehicles().subscribe(vehicles => {
-      this.vehicles = vehicles;
-      console.log("HERE");
-      console.log(this.vehicles);
-    });
 
     this.vehicleService.getCheck().subscribe(checks => console.log(checks));
-  }
-
-  refresh() {
-    this.vehicleService.getAllVehicles().subscribe(vehicles => {
-      this.vehicles = vehicles;
-      console.log("HERE");
-      console.log(this.vehicles);
-    });
   }
 
   displayDetail(vehicle: Vehicle) {
