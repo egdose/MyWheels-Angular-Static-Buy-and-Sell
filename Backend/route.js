@@ -6,6 +6,7 @@ var Vehicle = require('./models/vehicle');
 
 //Create a document
 router.post('/add', (req, res, next) => {
+    console.log("[] Add request received");
     var newVehicle = new Vehicle({
         id: req.body.id,
         title: req.body.title,
@@ -37,6 +38,7 @@ router.post('/add', (req, res, next) => {
 
 //Read all documents
 router.get('/getVehicles', (req, res, next) => {
+    console.log("[] Get all vehicle request received");
     var vehicles = Vehicle.find().select({ "_id": 0, "__v": 0 });
 
     vehicles.exec(function (err, vehicle) {
@@ -45,13 +47,14 @@ router.get('/getVehicles', (req, res, next) => {
                 msg: 'Failed to get vehicles'
             });
         } else {
-            res.json(vehicle);
+            res.send(JSON.stringify(vehicle));
         }
     });
 });
 
 //Read a document
 router.get('/getVehicle', (req, res, next) => {
+    console.log("[] Get vehicle by id request received");
     var id = req.query.id;
     var vehicle = Vehicle.find({ "id": id }).select({ "_id": 0, "__v": 0 });
 
@@ -68,6 +71,7 @@ router.get('/getVehicle', (req, res, next) => {
 
 //Update a document
 router.post('/update', (req, res, next) => {
+    console.log("[] Update vehicle request received");
     var id = req.body.id;
     var vehicle = Vehicle.findOneAndUpdate({ "id": id }, {
         $set: {
@@ -101,6 +105,7 @@ router.post('/update', (req, res, next) => {
 
 //Delete a document
 router.get('/delete', (req, res, next) => {
+    console.log("[] Delete vehicle request received");
     var id = req.query.id;
     var vehicle = Vehicle.findOneAndDelete({ "id": id });
 
@@ -115,6 +120,20 @@ router.get('/delete', (req, res, next) => {
             });
         }
     });
+});
+
+//Testing API
+router.get('/getCheck', (req, res, next) => {
+    console.log("[] Test API request received");
+    res.json([{
+        id: 1000,
+        title: 'Test Vehicle',
+    },
+    {
+        id: 1001,
+        title: 'Test Vehicle',
+    }
+    ]);
 });
 
 

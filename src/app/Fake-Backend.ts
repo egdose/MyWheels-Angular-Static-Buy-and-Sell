@@ -19,7 +19,7 @@ export const VEHICLES: Vehicle[] = [
   {
     id: 2,
     title: 'BMW X6',
-   image: '/assets/imgs/car-placeholder.png',
+    image: '/assets/imgs/car-placeholder.png',
     city: 'Karachi',
     price: 120000,
     dateAdded: new Date(),

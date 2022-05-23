@@ -5,7 +5,8 @@ import { Vehicle } from '../../Vehicle';
 @Component({
   selector: 'app-vehicle',
   templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.css']
+  styleUrls: ['./vehicle.component.css'],
+  providers: [VehicleService]
 })
 export class VehicleComponent implements OnInit {
 
@@ -18,12 +19,17 @@ export class VehicleComponent implements OnInit {
 
   ngOnInit(): void {
     this.vehicleService.getVehicles().subscribe(vehicles => this.vehicles = vehicles);
+    //this.vehicleService.getAllVehicles().subscribe(vehicles => this.vehicles = vehicles);
+
+    this.vehicleService.getCheck().subscribe(checks => console.log(checks));
+
+    console.log(this.vehicles);
   }
 
   displayDetail(vehicle: Vehicle) {
-	console.log("Event Triggered");
-	this.currentVehicle = vehicle;
-	this.detailVisible = "block";
+    console.log("Event Triggered");
+    this.currentVehicle = vehicle;
+    this.detailVisible = "block";
   }
 
   hideDetail() {
@@ -31,7 +37,7 @@ export class VehicleComponent implements OnInit {
   }
 
   queryData($event: any[]) {
-	this.queryObject = $event;
-	console.log(this.queryObject);
+    this.queryObject = $event;
+    console.log(this.queryObject);
   }
 }
