@@ -4,7 +4,7 @@ export class Vehicle {
   public image: string;
   public city: string;
   public price: number;
-  public dateAdded: Date;
+  //public dateAdded: Date;
   public rating: number;
   public make: string;
   public year: number;
@@ -19,7 +19,7 @@ export class Vehicle {
     image: string,
     city: string,
     price: number,
-    dateAdded: Date,
+    //dateAdded: Date,
     rating: number,
     make: string,
     year: number,
@@ -33,7 +33,7 @@ export class Vehicle {
     this.image = image;
     this.city = city;
     this.price = price;
-    this.dateAdded = dateAdded;
+    //this.dateAdded = dateAdded;
     this.rating = rating;
     this.make = make;
     this.year = year;

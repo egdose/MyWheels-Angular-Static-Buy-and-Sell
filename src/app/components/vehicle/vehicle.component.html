@@ -1,9 +1,12 @@
 <div class="container">
+	<app-button class="button" color="var(--orange)" text="Refresh" (btnClick)="(refresh())"></app-button>
 	<app-query class="queryContainer" (callParent)="queryData($event)"></app-query>
 	<div class="vehicleContainer">
 		<div class="vehicle">
-			<app-vehicle-detail [vehicle]="currentVehicle" [style.display]="detailVisible" (hideDetail)="hideDetail()"></app-vehicle-detail>
-			<app-vehicle-item *ngFor="let vehicle of vehicles | filterVehicle: queryObject" [vehicle]="vehicle" (viewDetail)="displayDetail($event)"></app-vehicle-item>
-			</div>
+			<app-vehicle-detail [vehicle]="currentVehicle" [style.display]="detailVisible" (hideDetail)="hideDetail()">
+			</app-vehicle-detail>
+			<app-vehicle-item *ngFor="let vehicle of vehicles" [vehicle]="vehicle" (viewDetail)="displayDetail($event)">
+			</app-vehicle-item>
+		</div>
 	</div>
 </div>

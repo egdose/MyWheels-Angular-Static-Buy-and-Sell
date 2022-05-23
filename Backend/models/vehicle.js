@@ -22,10 +22,6 @@ const vehicleSchema = new Schema({
         type: Number,
         required: true
     },
-    dateAdded: {
-        type: Date,
-        required: true
-    },
     rating: {
         type: Number,
         required: true

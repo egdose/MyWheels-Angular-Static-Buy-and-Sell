@@ -13,7 +13,6 @@ router.post('/add', (req, res, next) => {
         image: req.body.image,
         city: req.body.city,
         price: req.body.price,
-        dateAdded: req.body.dateAdded,
         rating: req.body.rating,
         make: req.body.make,
         year: req.body.year,
@@ -47,7 +46,7 @@ router.get('/getVehicles', (req, res, next) => {
                 msg: 'Failed to get vehicles'
             });
         } else {
-            res.send(JSON.stringify(vehicle));
+            res.json(vehicle);
         }
     });
 });
@@ -79,7 +78,6 @@ router.post('/update', (req, res, next) => {
             image: req.body.image,
             city: req.body.city,
             price: req.body.price,
-            dateAdded: req.body.dateAdded,
             rating: req.body.rating,
             make: req.body.make,
             year: req.body.year,
@@ -125,15 +123,28 @@ router.get('/delete', (req, res, next) => {
 //Testing API
 router.get('/getCheck', (req, res, next) => {
     console.log("[] Test API request received");
-    res.json([{
-        id: 1000,
-        title: 'Test Vehicle',
-    },
-    {
-        id: 1001,
-        title: 'Test Vehicle',
-    }
-    ]);
+
+    var vehicle = Vehicle.find({}).select({ "_id": 0, "__v": 0 });
+
+    vehicle.exec(function (err, vehicle) {
+        if (err) {
+            res.json({
+                msg: 'Failed to get vehicle'
+            });
+        } else {
+            res.json(vehicle);
+        }
+    });
+
+    // res.json([{
+    //     id: 1000,
+    //     title: 'Test Vehicle',
+    // },
+    // {
+    //     id: 1001,
+    //     title: 'Test Vehicle',
+    // }
+    // ]);
 });
 
 

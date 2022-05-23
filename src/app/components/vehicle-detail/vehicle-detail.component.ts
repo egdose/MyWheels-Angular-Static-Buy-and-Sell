@@ -16,10 +16,10 @@ export class VehicleDetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  getFormattedDate() {
-    return new DatePipe('en-US').transform(this.vehicle.dateAdded, 'MM dd, yyyy');
-  }
+
+  // getFormattedDate() {
+  //   return new DatePipe('en-US').transform(this.vehicle.dateAdded, 'MM dd, yyyy');
+  // }
 
   hideSelf(): void {
     this.hideDetail.emit();

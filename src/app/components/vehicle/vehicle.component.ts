@@ -18,12 +18,26 @@ export class VehicleComponent implements OnInit {
   constructor(private vehicleService: VehicleService) { }
 
   ngOnInit(): void {
-    this.vehicleService.getVehicles().subscribe(vehicles => this.vehicles = vehicles);
-    //this.vehicleService.getAllVehicles().subscribe(vehicles => this.vehicles = vehicles);
+    // this.vehicleService.getVehicles().subscribe(vehicles => {
+    //   this.vehicles = vehicles;
+    //   console.log("HERE");
+    //   console.log(this.vehicles);
+    // });
+    this.vehicleService.getAllVehicles().subscribe(vehicles => {
+      this.vehicles = vehicles;
+      console.log("HERE");
+      console.log(this.vehicles);
+    });
 
     this.vehicleService.getCheck().subscribe(checks => console.log(checks));
+  }
 
-    console.log(this.vehicles);
+  refresh() {
+    this.vehicleService.getAllVehicles().subscribe(vehicles => {
+      this.vehicles = vehicles;
+      console.log("HERE");
+      console.log(this.vehicles);
+    });
   }
 
   displayDetail(vehicle: Vehicle) {

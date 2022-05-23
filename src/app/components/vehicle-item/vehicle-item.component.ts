@@ -3,9 +3,9 @@ import { DatePipe } from '@angular/common';
 import { Vehicle } from '../../Vehicle';
 
 @Component({
-  selector: 'app-vehicle-item',
-  templateUrl: './vehicle-item.component.html',
-  styleUrls: ['./vehicle-item.component.css']
+	selector: 'app-vehicle-item',
+	templateUrl: './vehicle-item.component.html',
+	styleUrls: ['./vehicle-item.component.css']
 })
 export class VehicleItemComponent implements OnInit {
 	@Input()
@@ -13,14 +13,15 @@ export class VehicleItemComponent implements OnInit {
 	@Output() viewDetail = new EventEmitter<Vehicle>();
 
 	constructor() {
+		console.log("Object Initialized");
 	}
 
 	ngOnInit(): void {
 	}
 
-	getFormattedDate() {
-		return new DatePipe('en-US').transform(this.vehicle.dateAdded, 'MM dd, yyyy');
-	}
+	// getFormattedDate() {
+	// 	return new DatePipe('en-US').transform(this.vehicle.dateAdded, 'MM dd, yyyy');
+	// }
 
 	showDetails() {
 		console.log(this.vehicle.type);
